@@ -1,4 +1,3 @@
-// list of all the events that we have
 const ACTIONS = {
     JOIN: 'join',
     JOINED: 'joined',
@@ -8,4 +7,4 @@ const ACTIONS = {
     LEAVE: 'leave',
 };
 
-module.exports = ACTIONS; 
+module.exports = ACTIONS;
