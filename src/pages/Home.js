@@ -9,8 +9,8 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
    
   const navigate = useNavigate();
-  const[roomID,setRoomID] = useState('');
-  const[Username,setUsername] = useState('');
+  const[roomId,setRoomID] = useState('');
+  const[username,setUsername] = useState('');
   
       const createNewRoom = (e) => {
           // we do this to prevent refreshing the page
@@ -22,16 +22,16 @@ const Home = () => {
       };
 
       const joinRoom = () => {
-        if(!roomID || !Username)
+        if(!roomId || !username)
         {
           toast.error('ROOM ID & username is required');
           return;
         }
 
         //Redirect
-        navigate(`/editor/${roomID}`,{
+        navigate(`/editor/${roomId}`,{
             state:{
-                Username,
+                username,
             }
         })
 
@@ -61,7 +61,7 @@ const Home = () => {
             className="inputBox"
             placeholder="ROOM ID"  
             onChange={(e) => setRoomID(e.target.value)}
-            value={roomID}
+            value={roomId}
             onKeyUp={handleEnter}
          />
           <input
@@ -69,7 +69,7 @@ const Home = () => {
             className="inputBox"
             placeholder="USERNAME" 
             onChange={(e) => setUsername(e.target.value)}
-            value={Username}
+            value={username}
             onKeyUp={handleEnter} 
          />
          <button className="btn joinBtn" onClick={joinRoom}>Join</button>
